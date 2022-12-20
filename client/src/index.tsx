@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../src/theme";
 
-console.log(theme);
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <ThemeProvider theme={theme}>

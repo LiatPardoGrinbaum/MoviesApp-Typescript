@@ -10,6 +10,7 @@ type ContextProviderProps = {
 //*maybe use it in single movie component
 export type MovieType = {
   Title: string;
+  Poster: string;
   description: string;
   published: Date;
   image: string;

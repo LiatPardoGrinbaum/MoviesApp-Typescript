@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Box, InputBase, styled } from "@mui/material";
-import { ApiResponse, useFetch } from "../hooks/useFetch";
-import { MovieType } from "../context/MyContext";
+import { ApiResponse, useFetch } from "../../hooks/useFetch";
+import { MovieType } from "../../context/MyContext";
+import SingleMovie from "../SingleMovieDiv/SingleMovieDiv";
 // import axios from "axios";
 
 const Search = styled("div")(({ theme }) => ({
@@ -12,6 +13,12 @@ const Search = styled("div")(({ theme }) => ({
   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
   border: "solid 1px rgba(100, 100, 111, 0.2)",
   margin: "1rem",
+}));
+
+const MoviesBoxContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: "20px",
 }));
 
 //*need to get setMovies from context, and set data after using useFetch then review it
@@ -28,13 +35,13 @@ const MoviesPage = () => {
   const insertMovies = () => {
     return data.map((movie: MovieType) => {
       console.log(movie);
-      return <div key={movie.imdbID}> {movie.Title}</div>;
+      return <SingleMovie key={movie.imdbID} title={movie.Title} id={movie.imdbID} poster={movie?.Poster} />;
     });
   };
   if (!loading) console.log("dattaaaa", loading);
   // console.log(data);
   return (
-    <Box display="flex" justifyContent="center">
+    <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center">
       <Search>
         <InputBase
           placeholder="Search..."
@@ -45,16 +52,18 @@ const MoviesPage = () => {
           fullWidth={true}
         />
       </Search>
-      {responseField ? (
-        <div>{insertMovies()}</div>
-      ) : (
-        <div>
-          zssz
-          <p>{error}</p> <p>{error}</p> <p>{error}</p> <p>{error}</p> <p>{error}</p>
-          <br></br>
-          <p>ddddddddddd</p>
-        </div>
-      )}
+      <MoviesBoxContainer>
+        {responseField ? (
+          <div>{insertMovies()}</div>
+        ) : (
+          <div>
+            zssz
+            <p>{error}</p> <p>{error}</p> <p>{error}</p> <p>{error}</p> <p>{error}</p>
+            <br></br>
+            <p>ddddddddddd</p>
+          </div>
+        )}
+      </MoviesBoxContainer>
     </Box>
   );
 };

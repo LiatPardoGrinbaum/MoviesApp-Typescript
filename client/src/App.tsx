@@ -7,8 +7,8 @@ import "./App.css";
 
 import "./App.css";
 // import MoviesPage from "./components/MoviesPage/MoviesPage";
-import SingleContentPage from "./components/SingleContentPage/SingleContentPage";
-import HomePage from "./components/HomePage/HomePage";
+import SingleContentPage from "./pages/SingleContentPage/SingleContentPage";
+import HomePage from "./pages/HomePage/HomePage";
 
 const App: React.FC = () => {
   return (

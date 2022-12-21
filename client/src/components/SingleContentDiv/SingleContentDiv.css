@@ -1,7 +1,7 @@
 .contentDivContainer {
   display: flex;
   flex-direction: column;
-  width: 230px;
+  width: 240px;
   padding: 7px;
   margin: 20px;
   background-color: #17202e;
@@ -71,14 +71,27 @@
   font-size: 18px;
   text-align: center;
   margin-bottom: 10px;
+  height: 50px;
+  overflow-y: hidden;
 }
 .subTitle {
   color: white;
   font-size: 16px;
+  margin-bottom: 5px;
 }
 
-.vote {
-  background: #305d6d;
+.votePos {
+  background: #6eaa46;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+.votePos2 {
+  background: #3c788e;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+.voteNeg {
+  background: #b03131;
   padding: 0 10px;
   border-radius: 5px;
 }

@@ -33,7 +33,10 @@ const SingleContentDiv = (props: SingleContentProps) => {
       <p className="title">{props.title}</p>
       <div className="subTitleFlex">
         <span className="subTitle">{props.media_type === "tv" ? "TV serias" : "Movie"}</span>
-        <span className="subTitle vote">{props.vote.toString().slice(0, 3)}</span>
+        <span
+          className={props.vote > 8 ? "subTitle votePos" : props.vote < 6 ? "subTitle voteNeg" : "subTitle votePos2"}>
+          {props.vote.toString().slice(0, 3)}
+        </span>
         <span className="subTitle">{props.date.split("-")[0]}</span>
       </div>
     </div>

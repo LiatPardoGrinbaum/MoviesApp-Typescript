@@ -3,8 +3,10 @@ import { Box, InputBase, styled } from "@mui/material";
 import { ApiResponse, useFetch } from "../../hooks/useFetch";
 import { ContentType } from "../../context/MyContext";
 // import SingleMovie from "../SingleMovieDiv/SingleMovieDiv";
-import SingleContentDiv from "../SingleContentDiv/SingleContentDiv";
+import SingleContentDiv from "../../components/SingleContentDiv/SingleContentDiv";
 import "./HomePage.css";
+
+import PaginationDiv from "../../components/PaginationDiv/PaginationDiv";
 // import axios from "axios";
 
 const Search = styled("div")(({ theme }) => ({
@@ -21,7 +23,7 @@ const MoviesBoxContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   gap: "20px",
-  width: "80%",
+  width: "90%",
 }));
 
 //*need to get setMovies from context, and set data after using useFetch then review it
@@ -29,9 +31,10 @@ const MoviesBoxContainer = styled(Box)(({ theme }) => ({
 
 const HomePage = () => {
   const [input, setInput] = useState<string>("");
+  const [page, setPage] = useState<number>(1);
 
   const { results, error, loading }: ApiResponse = useFetch(
-    `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_OMDB_API_KEY}`
+    `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_OMDB_API_KEY}&page=${page}`
   );
 
   const insertMovies = () => {
@@ -79,6 +82,7 @@ const HomePage = () => {
           </div>
         )}
       </MoviesBoxContainer>
+      <PaginationDiv setPage={setPage} />
     </Box>
   );
 };

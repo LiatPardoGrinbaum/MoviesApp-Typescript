@@ -9,6 +9,8 @@ import "./App.css";
 // import MoviesPage from "./components/MoviesPage/MoviesPage";
 import SingleContentPage from "./pages/SingleContentPage/SingleContentPage";
 import HomePage from "./pages/HomePage/HomePage";
+import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 const App: React.FC = () => {
   return (
@@ -18,7 +20,9 @@ const App: React.FC = () => {
 
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/content" component={SingleContentPage} />
+          <Route path="/content:id" component={SingleContentPage} />
+          <Route path="/movies" component={MoviesPage} />
+          <Route path="/search" component={SearchPage} />
         </Switch>
       </BrowserRouter>
     </Box>

@@ -3,6 +3,7 @@ import { AppBar, Toolbar, styled, Typography, Badge } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Box } from "@mui/system";
 import MovieImg from "../../assets/movies.png";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -18,6 +19,12 @@ const Header = () => {
     gap: "20px",
   }));
 
+  const LinksBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    gap: "20px",
+  }));
+
   return (
     <AppBar position="sticky">
       <StyledToolbar>
@@ -27,11 +34,14 @@ const Header = () => {
           </Typography>
           <img src={MovieImg} alt="movie-logo" height={60} />
         </Box>
-        <Icons>
-          <Badge badgeContent={4} color="secondary">
-            <FavoriteIcon fontSize="large" />
-          </Badge>
-        </Icons>
+        <LinksBox>
+          <NavLink to="/search">Search</NavLink>
+          <Icons>
+            <Badge badgeContent={4} color="secondary">
+              <FavoriteIcon fontSize="large" />
+            </Badge>
+          </Icons>
+        </LinksBox>
       </StyledToolbar>
     </AppBar>
   );

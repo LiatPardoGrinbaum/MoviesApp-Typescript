@@ -3,6 +3,7 @@ import Pagination from "@mui/material/Pagination";
 
 type PaginationProps = {
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  numOfPages: number;
 };
 
 const PaginationDiv = (props: PaginationProps) => {
@@ -12,7 +13,7 @@ const PaginationDiv = (props: PaginationProps) => {
   };
   return (
     <div>
-      <Pagination count={10} onChange={onHandleChange} sx={{ marginBottom: "20px" }} color="primary" />
+      <Pagination count={props.numOfPages} onChange={onHandleChange} sx={{ marginBottom: "20px" }} color="primary" />
     </div>
   );
 };

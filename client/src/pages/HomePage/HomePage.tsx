@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, InputBase, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import { ApiResponse, useFetch } from "../../hooks/useFetch";
 import { ContentType } from "../../context/MyContext";
 // import SingleMovie from "../SingleMovieDiv/SingleMovieDiv";
@@ -8,16 +8,6 @@ import "./HomePage.css";
 
 import PaginationDiv from "../../components/PaginationDiv/PaginationDiv";
 // import axios from "axios";
-
-const Search = styled("div")(({ theme }) => ({
-  backgroundColor: "white",
-  padding: "5px 10px",
-  borderRadius: theme.shape.borderRadius,
-  width: "40%",
-  boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
-  border: "solid 1px rgba(100, 100, 111, 0.2)",
-  margin: "1rem",
-}));
 
 const MoviesBoxContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -30,7 +20,6 @@ const MoviesBoxContainer = styled(Box)(({ theme }) => ({
 //* need to define in context- title and setTitle and import here
 
 const HomePage = () => {
-  const [input, setInput] = useState<string>("");
   const [page, setPage] = useState<number>(1);
 
   const { results, error, loading }: ApiResponse = useFetch(
@@ -56,23 +45,8 @@ const HomePage = () => {
   if (!loading) console.log("loading", loading);
   // console.log(data);
   return (
-    <Box
-      className="homePageContainer"
-      display="flex"
-      justifyContent="center"
-      flexDirection="column"
-      alignItems="center"
-      width="100%">
-      <Search>
-        <InputBase
-          placeholder="Search..."
-          value={input}
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}
-          fullWidth={true}
-        />
-      </Search>
+    <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center" width="100%">
+      <h1>POPULAR</h1>
       <MoviesBoxContainer>
         {results ? (
           <div className="contentsContainer">{insertMovies()}</div>
@@ -82,7 +56,7 @@ const HomePage = () => {
           </div>
         )}
       </MoviesBoxContainer>
-      <PaginationDiv setPage={setPage} />
+      <PaginationDiv setPage={setPage} numOfPages={10} />
     </Box>
   );
 };

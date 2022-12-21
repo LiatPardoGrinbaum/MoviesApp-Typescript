@@ -7,7 +7,7 @@ import "./App.css";
 
 import "./App.css";
 // import MoviesPage from "./components/MoviesPage/MoviesPage";
-import SingleMoviePage from "./components/SingleMoviePage/SingleMoviePage";
+import SingleContentPage from "./components/SingleContentPage/SingleContentPage";
 import HomePage from "./components/HomePage/HomePage";
 
 const App: React.FC = () => {
@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/movie" component={SingleMoviePage} />
+          <Route path="/content" component={SingleContentPage} />
         </Switch>
       </BrowserRouter>
     </Box>

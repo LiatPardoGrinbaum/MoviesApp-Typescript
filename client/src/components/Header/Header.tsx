@@ -1,6 +1,9 @@
 import React from "react";
-import { AppBar, Toolbar, styled, Typography, Badge } from "@mui/material";
+import { AppBar, Toolbar, styled, Typography, Badge, BottomNavigation, BottomNavigationAction } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
+import LiveTvIcon from "@mui/icons-material/LiveTv";
+import SearchIcon from "@mui/icons-material/Search";
 import { Box } from "@mui/system";
 import MovieImg from "../../assets/movies.png";
 import { NavLink } from "react-router-dom";
@@ -35,6 +38,11 @@ const Header = () => {
           <img src={MovieImg} alt="movie-logo" height={60} />
         </Box>
         <LinksBox>
+          <BottomNavigation showLabels>
+            <BottomNavigationAction label="Movies" icon={<LocalMoviesIcon />} />
+            <BottomNavigationAction label="TV" icon={<LiveTvIcon />} />
+            <BottomNavigationAction component={NavLink} to="/search" label="Search" icon={<SearchIcon />} />
+          </BottomNavigation>
           <NavLink to="/search">Search</NavLink>
           <Icons>
             <Badge badgeContent={4} color="secondary">

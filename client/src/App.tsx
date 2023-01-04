@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Box } from "@mui/material";
 import "./App.css";
 // import Container from "@mui/material/Container";
+import { theme } from "./theme";
 
 import "./App.css";
 // import MoviesPage from "./components/MoviesPage/MoviesPage";
@@ -14,7 +15,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 
 const App: React.FC = () => {
   return (
-    <Box className="appContainer">
+    <Box className="appContainer" bgcolor={theme.palette.primary.light}>
       <BrowserRouter>
         <Header />
 

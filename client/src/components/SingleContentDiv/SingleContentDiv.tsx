@@ -29,8 +29,11 @@ const SingleContentDiv = (props: SingleContentProps) => {
         <p>More details</p>
       </div>
       <div className="transparentBg"></div>
+
       <img className="image" src={props.poster ? `${img_300}${props.poster}` : unavailable} alt={props.title} />
+
       <p className="title">{props.title}</p>
+
       <div className="subTitleFlex">
         <span className="subTitle">{props.media_type === "tv" ? "TV serias" : "Movie"}</span>
         <span

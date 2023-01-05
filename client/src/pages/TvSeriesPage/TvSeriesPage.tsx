@@ -4,6 +4,7 @@ import { ApiResponse, useFetch } from "../../hooks/useFetch";
 import { ContentType } from "../../context/MyContext";
 // import SingleMovie from "../SingleMovieDiv/SingleMovieDiv";
 import SingleContentDiv from "../../components/SingleContentDiv/SingleContentDiv";
+import { theme } from "../../theme";
 import "./TvSeriesPage.css";
 
 import PaginationDiv from "../../components/PaginationDiv/PaginationDiv";
@@ -42,8 +43,14 @@ const TvSeriesPage = () => {
   if (!loading) console.log("loading", loading);
   // console.log(data);
   return (
-    <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center" width="100%">
-      <h1>TV shows</h1>
+    <Box
+      display="flex"
+      justifyContent="center"
+      flexDirection="column"
+      alignItems="center"
+      width="100%"
+      className="tvseriesspage">
+      <h1 style={{ color: theme.palette.primary.main }}>TV shows</h1>
       <MoviesBoxContainer>
         {results ? (
           <div className="contentsContainer">{insertMovies()}</div>

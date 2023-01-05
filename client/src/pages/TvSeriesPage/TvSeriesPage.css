@@ -1,3 +1,10 @@
+.tvseriesspage > h1 {
+  font-family: "roboto";
+  font-weight: "600";
+  margin: 20px;
+  font-size: 40px;
+}
+
 .contentsContainer {
   display: flex;
   justify-content: center;

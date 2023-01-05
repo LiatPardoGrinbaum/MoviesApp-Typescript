@@ -8,6 +8,7 @@ import "./HomePage.css";
 
 import PaginationDiv from "../../components/PaginationDiv/PaginationDiv";
 // import axios from "axios";
+import { theme } from "../../theme";
 
 const MoviesBoxContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -44,8 +45,14 @@ const HomePage = () => {
   if (!loading) console.log("loading", loading);
   // console.log(data);
   return (
-    <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center" width="100%">
-      <h1>POPULAR</h1>
+    <Box
+      display="flex"
+      justifyContent="center"
+      flexDirection="column"
+      alignItems="center"
+      width="100%"
+      className="homepage">
+      <h1 style={{ color: theme.palette.primary.main }}>POPULAR</h1>
       <MoviesBoxContainer>
         {results ? (
           <div className="contentsContainer">{insertMovies()}</div>

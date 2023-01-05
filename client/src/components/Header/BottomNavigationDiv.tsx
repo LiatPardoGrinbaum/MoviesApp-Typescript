@@ -17,21 +17,21 @@ const BottomNavigationDiv = () => {
         setValue(newValue);
       }}>
       <BottomNavigationAction
-        style={{ color: "white" }}
+        style={value === 0 ? { color: theme.palette.secondary.main } : { color: "white" }}
         component={NavLink}
         to="/movies"
         label="Movies"
         icon={<LocalMoviesIcon />}
       />
       <BottomNavigationAction
-        style={{ color: "white" }}
+        style={value === 1 ? { color: theme.palette.secondary.main } : { color: "white" }}
         component={NavLink}
         to="/tv"
         label="TV"
         icon={<LiveTvIcon />}
       />
       <BottomNavigationAction
-        style={{ color: "white" }}
+        style={value === 2 ? { color: theme.palette.secondary.main } : { color: "white" }}
         component={NavLink}
         to="/search"
         label="Search"

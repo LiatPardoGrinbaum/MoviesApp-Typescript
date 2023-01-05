@@ -5,10 +5,18 @@
   flex-wrap: wrap;
   width: 100%;
 } */
+
+.homepage > h1 {
+  font-family: "roboto";
+  font-weight: "600";
+  margin: 20px;
+  font-size: 40px;
+}
 .contentsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  font-family: "Nunito Sans", sans-serif;
 }

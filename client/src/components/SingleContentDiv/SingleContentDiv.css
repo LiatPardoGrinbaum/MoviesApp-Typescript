@@ -1,7 +1,9 @@
 .contentDivContainer {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   width: 240px;
+  height: 450px;
   padding: 7px;
   margin: 20px;
   background-color: #17202e;

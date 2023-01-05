@@ -11,6 +11,7 @@ import "./App.css";
 import SingleContentPage from "./pages/SingleContentPage/SingleContentPage";
 import HomePage from "./pages/HomePage/HomePage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import TvSeriesPage from "./pages/TvSeriesPage/TvSeriesPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 
 const App: React.FC = () => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/" exact component={HomePage} />
           <Route path="/content:id" component={SingleContentPage} />
           <Route path="/movies" component={MoviesPage} />
+          <Route path="/tv" component={TvSeriesPage} />
           <Route path="/search" component={SearchPage} />
         </Switch>
       </BrowserRouter>

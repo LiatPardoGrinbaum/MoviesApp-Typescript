@@ -4,7 +4,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import { Box } from "@mui/system";
 import MovieImg from "../../assets/movies.png";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import BottomNavigationDiv from "./BottomNavigationDiv";
 
 const Header = () => {
@@ -38,7 +38,7 @@ const Header = () => {
         </Box>
         <LinksBox>
           <BottomNavigationDiv />
-          <NavLink to="/search">Search</NavLink>
+
           <Icons>
             <Badge badgeContent={4} color="secondary">
               <FavoriteIcon fontSize="large" />

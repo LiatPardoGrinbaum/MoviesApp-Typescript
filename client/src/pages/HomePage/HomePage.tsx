@@ -16,7 +16,6 @@ const MoviesBoxContainer = styled(Box)(({ theme }) => ({
   width: "90%",
 }));
 
-//*need to get setMovies from context, and set data after using useFetch then review it
 //* need to define in context- title and setTitle and import here
 
 const HomePage = () => {

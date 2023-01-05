@@ -5,6 +5,7 @@ export type ApiResponse = {
   status: Number;
   statusText: String;
   results: any;
+  totalPages: number;
   error: string;
   loading: Boolean;
 };
@@ -15,6 +16,7 @@ export const useFetch = (url: string): ApiResponse => {
   const [status, setStatus] = useState<Number>(0);
   const [statusText, setStatusText] = useState<String>("");
   const [results, setResults] = useState<any>();
+  const [totalPages, setTotalPages] = useState<any>();
   const [error, setError] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
   // const [responseField, setResponseField] = useState<boolean>(false);
@@ -25,7 +27,7 @@ export const useFetch = (url: string): ApiResponse => {
     try {
       const response = await axios.get(url);
       console.log(response);
-
+      setTotalPages(response.data.total_pages);
       setStatus(response.status);
       setStatusText(response.statusText);
       setResults(response.data.results || []);
@@ -43,5 +45,5 @@ export const useFetch = (url: string): ApiResponse => {
     getData();
   }, [getData]);
 
-  return { status, statusText, results, error, loading };
+  return { status, statusText, results, error, loading, totalPages };
 };

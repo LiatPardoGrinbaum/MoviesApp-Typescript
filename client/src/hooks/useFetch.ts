@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 
 export type ApiResponse = {
+  responseData: any;
   status: Number;
   statusText: String;
   results: any;
@@ -13,6 +14,7 @@ export type ApiResponse = {
 //*later- define data type (not any)
 
 export const useFetch = (url: string): ApiResponse => {
+  const [responseData, setResponseData] = useState<any>();
   const [status, setStatus] = useState<Number>(0);
   const [statusText, setStatusText] = useState<String>("");
   const [results, setResults] = useState<any>();
@@ -20,13 +22,15 @@ export const useFetch = (url: string): ApiResponse => {
   const [error, setError] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
   // const [responseField, setResponseField] = useState<boolean>(false);
+  //for getting a movie by id get request:
 
   const getData = useCallback(async () => {
     setLoading(true);
 
     try {
       const response = await axios.get(url);
-      console.log(response);
+
+      setResponseData(response.data);
       setTotalPages(response.data.total_pages);
       setStatus(response.status);
       setStatusText(response.statusText);
@@ -37,7 +41,7 @@ export const useFetch = (url: string): ApiResponse => {
       // const apiResponse = await fetch(url);
       // const json = await apiResponse.json();
     } catch (err) {
-      setError(err);
+      setError("An error occurred");
     }
   }, [url]);
 
@@ -45,5 +49,5 @@ export const useFetch = (url: string): ApiResponse => {
     getData();
   }, [getData]);
 
-  return { status, statusText, results, error, loading, totalPages };
+  return { responseData, status, statusText, results, error, loading, totalPages };
 };

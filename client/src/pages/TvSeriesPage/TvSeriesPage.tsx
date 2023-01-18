@@ -34,7 +34,7 @@ const TvSeriesPage = () => {
           id={content.id}
           poster={content.poster_path}
           date={content.release_date || content.first_air_date}
-          media_type={content.media_type}
+          media_type="tv"
           vote={content.vote_average}
         />
       );

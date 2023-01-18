@@ -12,7 +12,8 @@ const Header = () => {
     display: "flex",
     justifyContent: "space-between",
     backgroundColor: theme.palette.primary.main,
-    padding: "1.2rem",
+    // padding: "1.2rem",
+    height: "6rem",
   }));
 
   const Icons = styled(Box)(({ theme }) => ({
@@ -36,6 +37,7 @@ const Header = () => {
           </Typography>
           <img src={MovieImg} alt="movie-logo" height={60} />
         </Box>
+
         <LinksBox>
           <BottomNavigationDiv />
 

@@ -3,6 +3,7 @@ import Favorite from "@mui/icons-material/Favorite";
 import { IconButton } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import React from "react";
+import { Link } from "react-router-dom";
 import { img_300 } from "../../config/config";
 import { unavailable } from "../../config/config";
 import "./SingleContentDiv.css";
@@ -16,7 +17,6 @@ type SingleContentProps = {
   media_type: string;
 };
 const SingleContentDiv = (props: SingleContentProps) => {
-  console.log(typeof props.date);
   return (
     <div className="contentDivContainer">
       <IconButton aria-label="add to favorites" className="favoriteButton">
@@ -26,7 +26,7 @@ const SingleContentDiv = (props: SingleContentProps) => {
         />
       </IconButton>
       <div className="linkTo">
-        <p>More details</p>
+        <Link to={`/${props.media_type}/${props.id}`}>More Details</Link>
       </div>
       <div className="transparentBg"></div>
 

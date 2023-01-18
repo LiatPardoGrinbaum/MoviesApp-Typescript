@@ -22,7 +22,12 @@ const App: React.FC = () => {
 
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/content:id" component={SingleContentPage} />
+          <Route path="/movie/:id">
+            <SingleContentPage media_type="movie" />
+          </Route>
+          <Route path="/tv/:id">
+            <SingleContentPage media_type="tv" />
+          </Route>
           <Route path="/movies" component={MoviesPage} />
           <Route path="/tv" component={TvSeriesPage} />
           <Route path="/search" component={SearchPage} />

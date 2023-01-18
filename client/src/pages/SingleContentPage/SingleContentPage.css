@@ -1,0 +1,13 @@
+/* .MuiButton-root {
+  outline: 0;
+} */
+
+.singleContentPage {
+  height: calc(100vh - 6rem);
+  background: black;
+}
+
+/* .singleContentPage img{
+  top:0;
+  left:0;
+} */

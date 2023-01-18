@@ -32,7 +32,7 @@ type ContentsContextType = {
 };
 
 export const MyContext = createContext({} as ContentsContextType);
-
+//!no use for now- for latar use
 export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [contents, setContents] = useState<Contents | null>(null);
 
